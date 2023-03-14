@@ -1,4 +1,4 @@
-![build-test](https://github.com/browser-actions/setup-firefox/workflows/build-test/badge.svg)
+![build-test](https://github.com/itsjwala/setup-firefox/workflows/build-test/badge.svg)
 
 # setup-firefox
 
@@ -14,7 +14,7 @@ Basic usage:
 
 ```yaml
 steps:
-  - uses: browser-actions/setup-firefox@v1
+  - uses: itsjwala/setup-firefox@v1
   - run: firefox --version
 ```
 
@@ -25,12 +25,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        firefox: [ '84.0', 'latest-beta', 'latest-devedition', 'latest-esr', 'latest' ]
+        firefox: [ '84.0', 'latest-beta', 'latest-devedition', 'latest-nightly', 'latest-esr', 'latest' ]
     name: Firefox ${{ matrix.firefox }} sample
     steps:
       - name: Setup firefox
         id: setup-firefox
-        uses: browser-actions/setup-firefox@v1
+        uses: itsjwala/setup-firefox@v1
         with:
           firefox-version: ${{ matrix.firefox }}
       - run: |
@@ -41,4 +41,3 @@ jobs:
 ## License
 
 [MIT](LICENSE)
-
